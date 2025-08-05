@@ -28,14 +28,14 @@ const Contact = () => {
 
     // EmailJS integration
     emailjs.send(
-      'service_1wb1208', // Your EmailJS service ID
-      'template_3ravp07', // Your EmailJS template ID
+      'placegolder', // Your EmailJS service ID
+      'placeholder', // Your EmailJS template ID
       {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       },
-      'xB5rK_MkStzb7CNXh' // Your EmailJS public key
+      'placehodler_key' // Your EmailJS public key
     )
     .then((response) => {
       console.log('SUCCESS!', response);
@@ -56,7 +56,7 @@ const Contact = () => {
 
   const handleWhatsAppClick = () => {
     const message = `Hello Taha! I'm interested in your cybersecurity services.`;
-    const whatsappUrl = `https://wa.me/923145197268?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/923125736191?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -68,28 +68,28 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: <FiGithub size={24} />,
-      url: 'https://github.com/username',
-      color: 'hover:text-gray-400',
-    },
+    // {
+    //   name: 'GitHub',
+    //   icon: <FiGithub size={24} />,
+    //   url: 'https://github.com/username',
+    //   color: 'hover:text-gray-400',
+    // },
     {
       name: 'LinkedIn',
       icon: <FiLinkedin size={24} />,
-      url: 'https://linkedin.com/in/username',
+      url: 'https://www.linkedin.com/in/taha-khan-aa4a7828b',
       color: 'hover:text-blue-400',
     },
-    {
-      name: 'Twitter',
-      icon: <FiTwitter size={24} />,
-      url: 'https://twitter.com/username',
-      color: 'hover:text-blue-500',
-    },
+    // {
+    //   name: 'Twitter',
+    //   icon: <FiTwitter size={24} />,
+    //   url: 'https://twitter.com/username',
+    //   color: 'hover:text-blue-500',
+    // },
     {
       name: 'Email',
       icon: <FiMail size={24} />,
-      url: 'mailto:your.email@example.com',
+      url: 'taha.khan.cyber@gmail.com',
       color: 'hover:text-red-400',
     },
   ];
@@ -104,13 +104,13 @@ const Contact = () => {
     {
       icon: <FiMail size={20} />,
       title: 'Email',
-      value: 'taha.khan@example.com',
+      value: 'taha.khan.cyber@gmail.com',
       color: 'text-green-400',
     },
     {
       icon: <FiPhone size={20} />,
       title: 'Phone',
-      value: '+92 314 5197268',
+      value: '+92 312 5736191',
       color: 'text-purple-400',
     },
     {

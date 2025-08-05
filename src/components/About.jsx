@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useState } from 'react';
 import { 
   FiCode, 
   FiDatabase,  
@@ -9,7 +10,9 @@ import {
   FiAward,
   FiUsers,
   FiClock,
-  FiTarget
+  FiTarget,
+  FiChevronDown,
+  FiChevronUp
 } from 'react-icons/fi';
 
 const About = () => {
@@ -18,15 +21,69 @@ const About = () => {
     threshold: 0.1,
   });
 
-  const skills = [
-    { name: 'SIEM Solutions', icon: <FiDatabase />, color: 'from-blue-400 to-cyan-500' },
-    { name: 'XDR Platforms', icon: <FiZap />, color: 'from-green-400 to-emerald-500' },
-    { name: 'DLP Systems', icon: <FiLayers />, color: 'from-purple-400 to-pink-500' },
-    { name: 'PAM Solutions', icon: <FiCode />, color: 'from-orange-400 to-red-500' },
-    { name: 'MDM Management', icon: <FiGitBranch />, color: 'from-indigo-400 to-purple-500' },
-    { name: 'Firewall Security', icon: <FiZap />, color: 'from-red-400 to-orange-500' },
-    { name: 'Threat Detection', icon: <FiLayers />, color: 'from-yellow-400 to-orange-500' },
-    { name: 'Incident Response', icon: <FiCode />, color: 'from-green-400 to-blue-500' },
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const securityCategories = [
+    { 
+      name: 'SIEM Tools', 
+      icon: <FiDatabase />, 
+      color: 'from-blue-400 to-cyan-500',
+      tools: [
+        { name: 'ELK Stack', icon: 'https://img.icons8.com/color/96/elasticsearch.png' },
+        { name: 'WAZUH', icon: '/wazuh-logo.svg' },
+        { name: 'IBM QRadar', icon: 'https://img.icons8.com/color/96/ibm.png' },
+        { name: 'Splunk', icon: 'https://img.icons8.com/color/96/splunk.png' }
+      ]
+    },
+    { 
+      name: 'XDR Solution', 
+      icon: <FiZap />, 
+      color: 'from-green-400 to-emerald-500',
+      tools: [
+        { name: 'Trend Micro Vision One XDR', icon: '/tm-logo-red-white-t.svg' },
+        { name: 'Microsoft Defender XDR', icon: 'https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png' },
+        { name: 'Sophos XDR', icon: 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNDAgMjAiPjxnPjxwYXRoIHN0eWxlPSJjb2xvcjogI2ZmZiIgZD0iTTEzNi4wNCw4LjIyaC0xMWMtLjUsMC0uOTEtLjQxLS45MS0uOTFzLjQxLS45MS45MS0uOTFoMTQuMzFzMC0zLjA1LDAtMy4wNWgtMTQuMzFjLTIuMTgsMC0zLjk2LDEuNzgtMy45NiwzLjk2czEuNzgsMy45NiwzLjk2LDMuOTZoMTFjLjUsMCwuOTEuNDEuOTEuOTJzLS40MS44OS0uOTEuODloLTE0LjM0djMuMDVoMTQuMzRjMi4xOCwwLDMuOTYtMS43NiwzLjk2LTMuOTQsMC0yLjE4LTEuNzgtMy45Ny0zLjk2LTMuOTdaIj48L3BhdGg+PHBhdGggc3R5bGU9ImNvbG9yOiAjZmZmIiBkPSJNNTMuMTUsMy4zNmgtNS45NmMtMy41MywwLTYuNCwyLjg3LTYuNCw2LjRzMi44Nyw2LjQsNi40LDYuNGg1Ljk2YzMuNTMsMCw2LjQtMi44Nyw2LjQtNi40cy0yLjg3LTYuNC02LjQtNi40Wk01My4xNSwxMy4xaC01Ljk2Yy0xLjg0LDAtMy4zNC0xLjUtMy4zNC0zLjM0czEuNS0zLjM0LDMuMzQtMy4zNGg1Ljk2YzEuODQsMCwzLjM0LDEuNSwzLjM0LDMuMzRzLTEuNSwzLjM0LTMuMzQsMy4zNFoiPjwvcGF0aD48cGF0aCBzdHlsZT0iY29sb3I6ICNmZmYiIGQ9Ik0xMTMuNCwzLjM2aC01Ljk2Yy0zLjUzLDAtNi40LDIuODctNi40LDYuNCwwLDMuNTMsMi44Nyw2LjQsNi40LDYuNGg1Ljk2YzMuNTMsMCw2LjQtMi44Nyw2LjQtNi40cy0yLjg3LTYuNC02LjQtNi40Wk0xMTMuNCwxMy4xaC01Ljk2Yy0xLjg0LDAtMy4zNC0xLjUtMy4zNC0zLjM0czEuNS0zLjM0LDMuMzQtMy4zNGg1Ljk2YzEuODQsMCwzLjM0LDEuNSwzLjM0LDMuMzRzLTEuNSwzLjM0LTMuMzQsMy4zNFoiPjwvcGF0aD48cG9seWdvbiBzdHlsZT0iY29sb3I6ICNmZmYiIHBvaW50cz0iOTYuMTggMy4zNyA5Ni4xOCA4LjIxIDg0LjI1IDguMjEgODQuMjUgMy4zNyA4MS4xOSAzLjM3IDgxLjE5IDE2LjE0IDg0LjI1IDE2LjE0IDg0LjI1IDExLjI3IDk2LjE4IDExLjI3IDk2LjE4IDE2LjE0IDk5LjIzIDE2LjE0IDk5LjIzIDMuMzcgOTYuMTggMy4zNyI+PC9wb2x5Z29uPjxwYXRoIHN0eWxlPSJjb2xvcjogI2ZmZiIgZD0iTTM1LjY4LDguMjJoLTExYy0uNSwwLS45MS0uNDEtLjkxLS45MXMuNDEtLjkxLjkxLS45MWgxNC4zMXYtMy4wNWgtMTQuMzFjLTIuMTgsMC0zLjk2LDEuNzgtMy45NiwzLjk2czEuNzgsMy45NiwzLjk2LDMuOTZoMTFjLjUsMCwuOTEuNDEuOTEuOTJzLS40MS44OS0uOTEuODloLTE0LjM0djMuMDVoMTQuMzRjMi4xOCwwLDMuOTYtMS43NiwzLjk2LTMuOTRzLTEuNzgtMy45Ny0zLjk2LTMuOTdaIj48L3BhdGg+PHBhdGggc3R5bGU9ImNvbG9yOiAjZmZmIiBkPSJNNzQuNjYsMy4zN2gtMTAuMzBzLTEuMjMsMC0xLjIzLDBoLTEuODJzMCwxMi43NywwLDEyLjc3aDMuMDV2LTMuNDJzMTAuMzAsMCwxMC4zMCwwYzIuNTgsMCw0LjY3LTIuMSw0LjY3LTQuNjcsMC0yLjU4LTIuMS00LjY3LTQuNjctNC42N1pNNzQuNjYsOS42NmgtMTAuMzBzMC0zLjI0LDAtMy4yNGgxMC4zMGMuODksMCwxLjYyLjczLDEuNjIsMS42MnMtLjczLDEuNjItMS42MiwxLjYyWiI+PC9wYXRoPjwvZz48cGF0aCBzdHlsZT0iY29sb3I6ICNmZmYiIGQ9Ik0wLDMuMzN2Ni43YzAsMS4xNC42MiwyLjE4LDEuNjEsMi43M2w2Ljk4LDMuODcuMDUuMDMsNy4wMS0zLjljLjk5LS41NSwxLjYxLTEuNiwxLjYxLTIuNzNWMy4zM0gwWk0xMS4xMywxMS40MWMtLjM1LjItLjc0LjMtMS4xNS4zbC02Ljg1LjAyLDMuNDUtMS45M2MuNTItLjI5LDEuMTEtLjQ0LDEuNy0uNDRsNi40Ny4wMi0zLjYzLDIuMDJaMTEuMTMsNy45NmMtLjM1LjItLjc0LjMtMS4xNS4zbC02Ljg1LjAyLDMuNDUtMS45M2MuNTItLjI5LDEuMTEtLjQ0LDEuNy0uNDRsNi40Ny4wMi0zLjYzLDIuMDJaIj48L3BhdGg+PC9zdmc+' }
+      ]
+    },
+    { 
+      name: 'DLP', 
+      icon: <FiLayers />, 
+      color: 'from-purple-400 to-pink-500',
+      tools: [
+        { name: 'Trellix DLP', icon: '/Trellix-x-white.svg' },
+        { name: 'ZScaler DLP', icon: '/zscaler-logo.svg' },
+        { name: 'Symantec DLP', icon: 'https://www.broadcom.com/img/broadcom-logo.png' }
+      ]
+    },
+    { 
+      name: 'PAM', 
+      icon: <FiCode />, 
+      color: 'from-orange-400 to-red-500',
+      tools: [
+        { name: 'Delinea PAM', icon: 'https://delinea.com/hs-fs/hubfs/Delinea/logos/Wordmark/delinea-logo-wordmark-tm-rgb-green-email.png?width=114&height=26&name=delinea-logo-wordmark-tm-rgb-green-email.png' }
+      ]
+    },
+    { 
+      name: 'MDM', 
+      icon: <FiGitBranch />, 
+      color: 'from-indigo-400 to-purple-500',
+      tools: [
+        { name: 'Microsoft Intune', icon: 'https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png' },
+        { name: 'Hexnode MDM', icon: '/hexnode.png' },
+        { name: 'Jumpcloud', icon: '/jumpcloud.png' },
+        { name: 'Kandji', icon: '/kandji.png' }
+      ]
+    },
+    { 
+      name: 'Firewalls', 
+      icon: <FiZap />, 
+      color: 'from-red-400 to-orange-500',
+      tools: [
+        { name: 'Cloudflare WAF', icon: '/cloudflare.png' },
+        { name: 'AWS WAF', icon: '/aws.png' },
+        { name: 'pfSense Firewall', icon: 'https://img.icons8.com/color/96/firewall.png' }
+      ]
+    },
   ];
 
   const stats = [
@@ -120,7 +177,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Skills Section */}
+        {/* Security Technologies Dropdown Section */}
         <motion.div
           id="skills"
           initial={{ opacity: 0, y: 20 }}
@@ -129,28 +186,77 @@ const About = () => {
           className="text-center"
         >
           <h3 className="cyber-title text-2xl font-semibold text-textPrimary mb-8">
-            Here are the key <span className="gradient-text">cybersecurity technologies</span> I specialize in:
+            Click on each category to explore the <span className="gradient-text">security tools</span> I work with:
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {skills.map((skill, index) => (
+          <div className="max-w-4xl mx-auto space-y-4">
+            {securityCategories.map((category, index) => (
               <motion.div
-                key={skill.name}
+                key={category.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
                 className="group"
               >
-                <div className="cyber-card p-4 rounded-xl bg-primary/50 border border-gray-700 hover:border-matrix/50 transition-all duration-300 hover-lift">
-                  <div className="flex items-center space-x-3">
-                    <div className={`p-2 rounded-lg bg-gradient-to-r ${skill.color} text-white group-hover:scale-110 transition-transform duration-300`}>
-                      {skill.icon}
+                <div className="cyber-card rounded-xl bg-primary/50 border border-gray-700 hover:border-matrix/50 transition-all duration-300 hover-lift overflow-hidden">
+                  <button
+                    onClick={() => setOpenDropdown(openDropdown === category.name ? null : category.name)}
+                    className="w-full p-4 flex items-center justify-between hover:bg-primary/30 transition-colors duration-300"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+                        {category.icon}
+                      </div>
+                      <span className="text-textPrimary font-medium group-hover:text-matrix transition-colors duration-300">
+                        {category.name}
+                      </span>
                     </div>
-                    <span className="text-textPrimary font-medium group-hover:text-matrix transition-colors duration-300">
-                      {skill.name}
-                    </span>
-                  </div>
+                    <div className="text-matrix transition-transform duration-300">
+                      {openDropdown === category.name ? <FiChevronUp size={20} /> : <FiChevronDown size={20} />}
+                    </div>
+                  </button>
+                  
+                  {openDropdown === category.name && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="border-t border-gray-700 bg-primary/30"
+                    >
+                      <div className="p-4">
+                                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                           {category.tools.map((tool, toolIndex) => (
+                             <motion.div
+                               key={tool.name}
+                               initial={{ opacity: 0, x: -20 }}
+                               animate={{ opacity: 1, x: 0 }}
+                               transition={{ duration: 0.3, delay: toolIndex * 0.1 }}
+                               className="flex items-center space-x-3 p-3 rounded-lg bg-primary/50 hover:bg-primary/70 transition-colors duration-300"
+                             >
+                               <div className="w-13 h-13 bg-gray-900 rounded-lg flex items-center justify-center p-1">
+                                 <img
+                                   src={tool.icon}
+                                   alt={tool.name}
+                                   className="w-14 h-14 object-contain"
+                                   onError={(e) => {
+                                     e.target.style.display = 'none';
+                                     e.target.nextSibling.style.display = 'flex';
+                                   }}
+                                 />
+                                 <div className="hidden w-full h-full bg-gradient-to-br from-secondary/20 to-purple-500/20 rounded flex items-center justify-center text-secondary text-xs font-bold">
+                                   {tool.name.split(' ')[0]}
+                                 </div>
+                               </div>
+                               <span className="text-textSecondary text-sm font-medium">
+                                 {tool.name}
+                               </span>
+                             </motion.div>
+                           ))}
+                         </div>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </motion.div>
             ))}

@@ -150,9 +150,9 @@ const Experience = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+                 </div>
 
-        {/* Call to Action */}
+         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
