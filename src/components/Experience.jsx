@@ -23,7 +23,7 @@ const Experience = () => {
         'Conducted security assessments and vulnerability management'
       ],
       technologies: ['SIEM', 'XDR', 'DLP', 'MDM', 'Firewall Management', 'Incident Response'],
-      logo: 'https://www.acemoneytransfer.com/wp-content/uploads/2021/03/ace-logo.png'
+      logo: 'https://d27735ao2xxhhe.cloudfront.net/images/svg/include/navbar-logo-lg.svg'
     },
     {
       company: 'NETS International',
@@ -39,7 +39,7 @@ const Experience = () => {
         'Collaborated with teams to implement security best practices'
       ],
       technologies: ['SIEM', 'PAM', 'DLP', 'Security Assessment', 'Compliance', 'Infrastructure Security'],
-      logo: 'https://via.placeholder.com/150x80/1a1a2e/64ffda?text=NETS'
+      logo: 'https://nets-international.com/wp-content/uploads/2023/05/nets-logo-1024x728.png'
     }
   ];
 

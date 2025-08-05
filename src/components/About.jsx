@@ -285,7 +285,7 @@ const About = () => {
               { name: 'Microsoft Defender XDR', logo: 'https://th.bing.com/th/id/OIP.s9YRL63y154sRs4Lyz62OgHaH8?w=170&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'Microsoft Intune MDM', logo: 'https://th.bing.com/th/id/OIP.s9YRL63y154sRs4Lyz62OgHaH8?w=170&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'Hexnode MDM', logo: 'https://th.bing.com/th/id/OIP.JPm2e99u_tLjpb4KrLIM2gHaHa?w=171&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
-              { name: 'Sophos MDM', logo: 'https://1000logos.net/wp-content/uploads/2020/08/Sophos-Emblem-1024x640.jpg' },
+              // { name: 'Sophos MDM', logo: 'https://1000logos.net/wp-content/uploads/2020/08/Sophos-Emblem-1024x640.jpg' },
               { name: 'Jumpcloud MDM', logo: 'https://th.bing.com/th/id/OIP.144kYe-7ET8DDNMaMaRlpwHaHa?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'Kandgi MDM', logo: 'https://th.bing.com/th/id/OIP.AD3lYczZfvNlYP-RVHMbJgAAAA?w=187&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7' },
               { name: 'Cloudflare WAF', logo: 'https://ts4.mm.bing.net/th?id=OIP.ri_JSpa4jpBbkPE5GfoAEwHaHa&pid=15.1' },
@@ -294,6 +294,8 @@ const About = () => {
               { name: 'WAZUH SIEM', logo: 'https://th.bing.com/th/id/OIP.21r-apQ2ZtaXIbdkAzvqagAAAA?w=159&h=176&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'Splunk SIEM', logo: 'https://th.bing.com/th/id/OIP.3u1BIjJU8bGIp_TKC_emigHaEK?w=263&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'IBM QRadar SIEM', logo: 'https://th.bing.com/th/id/OIP.6bLseTSHRtXJkJySLstn5AAAAA?w=180&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
+              { name: 'Trellix DLP', logo: '/trellix-logo-black.svg' },
+              { name: 'ELK Stack', logo: 'https://img.icons8.com/color/96/elasticsearch.png' },
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}

@@ -7,8 +7,8 @@ const Projects = () => {
   const projects = [
     {
       title: 'Monitoring',
-      description: 'Actively monitoring and investigating alerts via SIEM platforms to identify threats and support rapid incident response.',
-      technologies: ['SIEM', 'Threat Detection', 'Incident Response'],
+     description: 'Actively monitoring and investigating alerts via SIEM platforms, managing firewall logs to detect network anomalies, and ensuring compliance with SLA commitments to maintain operational visibility and support timely incident response.',
+      technologies: ['SIEM',`Firewall`,'SLA', 'Threat Detection'],
       github: '#',
       live: '#',
     },
@@ -21,8 +21,8 @@ const Projects = () => {
     },
     {
       title: 'Administration',
-      description: 'Managing XDR, MDM, and DLP solutions to maintain security controls, enforce policies, and protect organizational assets.',
-      technologies: ['XDR', 'MDM', 'DLP', 'Security Controls'],
+     description: 'Managing XDR, MDM, and DLP solutions to maintain security controls, enforce policies, and protect organizational assets. Administering SIEM, PAM, and Firewall technologies to ensure threat visibility, privileged access management, and robust network defense.',
+     technologies: ['SIEM', 'XDR', 'PAM', 'Firewall', 'MDM', 'DLP'],
       github: '#',
       live: '#',
     },
