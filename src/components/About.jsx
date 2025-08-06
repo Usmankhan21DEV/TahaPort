@@ -278,6 +278,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
               { name: 'Delinea PAM', logo: 'https://logos-world.net/wp-content/uploads/2022/03/Delinea-Symbol.png' },
+              { name: 'Trellix DLP', logo: '/trellix-logo-black.svg' },
               { name: 'Symantec DLP', logo: 'https://tse3.mm.bing.net/th/id/OIP.RvXAkSMdznxAZdNbsCzVJQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
               { name: 'Zscaler DLP', logo: 'https://tse4.mm.bing.net/th/id/OIP.HLe3yjNOAp9zSU4eyfofIAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
               { name: 'Trend Micro Vision One XDR', logo: 'https://3.imimg.com/data3/DD/BY/MY-9447834/trend-micro-support-500x500.png' },
@@ -293,8 +294,7 @@ const About = () => {
               { name: 'Pfsense Firewall', logo: 'https://th.bing.com/th/id/OIP.l1VE5FRGV_GkCa7DXrV7ZgHaHO?w=183&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'WAZUH SIEM', logo: 'https://th.bing.com/th/id/OIP.21r-apQ2ZtaXIbdkAzvqagAAAA?w=159&h=176&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
               { name: 'Splunk SIEM', logo: 'https://th.bing.com/th/id/OIP.3u1BIjJU8bGIp_TKC_emigHaEK?w=263&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
-              { name: 'IBM QRadar SIEM', logo: 'https://th.bing.com/th/id/OIP.6bLseTSHRtXJkJySLstn5AAAAA?w=180&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },
-              { name: 'Trellix DLP', logo: '/trellix-logo-black.svg' },
+              { name: 'IBM QRadar SIEM', logo: 'https://th.bing.com/th/id/OIP.6bLseTSHRtXJkJySLstn5AAAAA?w=180&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3' },              
               { name: 'ELK Stack', logo: 'https://img.icons8.com/color/96/elasticsearch.png' },
             ].map((tech, index) => (
               <motion.div

@@ -11,8 +11,8 @@ const Experience = () => {
   const experiences = [
     {
       company: 'ACE Money Transfer',
-      position: 'Cybersecurity Professional',
-      duration: '2023 - Present',
+      position: 'SOC Analyst',
+      duration: 'January 2025 - Present',
       location: 'Pakistan',
       description: 'ACE Money Transfer is a leading global money transfer company that provides fast, secure, and reliable international money transfer services to millions of customers worldwide. The company operates in over 100 countries and offers competitive exchange rates with a focus on customer convenience and security.',
       responsibilities: [
@@ -28,7 +28,7 @@ const Experience = () => {
     {
       company: 'NETS International',
       position: 'Security Analyst',
-      duration: '2022 - 2023',
+      duration: 'August 2024 – December 2024',
       location: 'Pakistan',
       description: 'NETS International is a technology solutions provider specializing in cybersecurity, network infrastructure, and digital transformation services. The company serves clients across various industries with a focus on implementing robust security frameworks and protecting digital assets.',
       responsibilities: [
@@ -59,7 +59,7 @@ const Experience = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-secondary to-purple-500 mx-auto rounded-full mb-6"></div>
           <p className="text-textSecondary max-w-2xl mx-auto text-lg">
             Professional experience in cybersecurity roles, implementing and managing security solutions for global organizations.
-          </p>
+          </p> 
         </motion.div>
 
         <div className="space-y-12">
