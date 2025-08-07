@@ -25,17 +25,17 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ type: 'loading', message: 'Sending message...' });
-
+ 
     // EmailJS integration
     emailjs.send(
-      'placegolder', // Your EmailJS service ID
-      'placeholder', // Your EmailJS template ID
+      'service_hys0yjq', // Your EmailJS service ID
+      'template_kgrdt3k', // Your EmailJS template ID
       {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       },
-      'placehodler_key' // Your EmailJS public key
+      'wnIGioN9jClShVr8r' // Your EmailJS public key
     )
     .then((response) => {
       console.log('SUCCESS!', response);

@@ -6,9 +6,9 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
   const socialLinks = [
-    { icon: <FiGithub size={20} />, url: 'https://github.com/taha-khan' },
+    // { icon: <FiGithub size={20} />, url: 'https://github.com/taha-khan' },
     { icon: <FiLinkedin size={20} />, url: 'https://www.linkedin.com/in/taha-khan-aa4a7828b' },
-    { icon: <FiShield size={20} />, url: 'https://tryhackme.com/p/taha.khan' },
+    { icon: <FiShield size={20} />, url: 'https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-8NIR3SULJI.pdf' },
   ];
 
   const containerVariants = {
